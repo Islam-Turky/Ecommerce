@@ -15,8 +15,9 @@ app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
 // Routers
+app.use(`${api}/users`, routes.userRouter);
 app.use(`${api}/products`, routes.productRouter);
-app.use(`${api}/category`, routes.categoryRouter);
+app.use(`${api}/categories`, routes.categoryRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(api);
